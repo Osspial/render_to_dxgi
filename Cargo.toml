@@ -1,0 +1,25 @@
+[package]
+name = "render_to_dxgi"
+version = "0.1.0"
+authors = ["Osspial <osspial@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+glutin_wgl_sys = {path="./glutin_wgl_sys"}
+winit="0.20.0-alpha1"
+gl = "*"
+
+[target.'cfg(target_os = "windows")'.dependencies.winapi]
+version = "0.3"
+features = [
+    "winnt",
+    "winuser",
+    "wingdi",
+    "libloaderapi",
+    "dxgi",
+    "d3d11",
+    "dxgi1_2",
+    "dxgi1_3",
+]
